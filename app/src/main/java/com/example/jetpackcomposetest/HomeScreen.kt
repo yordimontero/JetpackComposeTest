@@ -28,7 +28,11 @@ fun HomeScreen(
             fontSize = MaterialTheme.typography.titleLarge.fontSize,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.clickable {
-                navController.navigate(route = Screen.Detail.route)
+                //navController.navigate(route = Screen.Detail.route)
+                //navController.navigate(route = Screen.Detail.passId(15))
+                //navController.navigate(route = Screen.Detail.passNameAndId("Moma", 25))
+                //navController.navigate(route = Screen.Detail.passId(6))
+                navController.navigate(route = Screen.Detail.passNameAndId(id = 6, name = "La sexta es inevitable"))
             }
         )
     }
