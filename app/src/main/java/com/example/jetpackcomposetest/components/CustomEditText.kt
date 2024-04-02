@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomEditText(it: (String) -> Unit) {
+fun CustomEditText(onValueChange: (String) -> Unit) {
     Column(
         //modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -36,7 +36,7 @@ fun CustomEditText(it: (String) -> Unit) {
             value = text,
             onValueChange = {
                 text = it
-                it(it)
+                onValueChange(text)
             },
             enabled = true,
             readOnly = false,

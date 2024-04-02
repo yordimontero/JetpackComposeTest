@@ -4,6 +4,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -38,24 +42,28 @@ fun HomeScreen(
         )
     }*/
 
-    var text = ""
+    var name by remember { mutableStateOf("") }
+    var id by remember { mutableStateOf("") }
 
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        CustomEditText {
-            text = it
-        }
+
+        CustomEditText { name = it }
         CustomSpacer(width = 0.dp, height = 30.dp)
+        CustomEditText { id = it }
+        CustomSpacer(width = 0.dp, height = 30.dp)
+
         CustomButton(
             text = "Continue",
             loadingText = "",
             onClick = {
-                navController.navigate(route = Screen.Detail.passNameAndId(id = 6, name = text))
+                navController.navigate(route = Screen.Detail.passNameAndId(id = id.toInt(), name = name))
             }
         )
+
     }
 
 }
