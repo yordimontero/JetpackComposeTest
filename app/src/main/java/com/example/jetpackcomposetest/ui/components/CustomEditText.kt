@@ -1,54 +1,31 @@
-package com.example.jetpackcomposetest
+package com.example.jetpackcomposetest.ui.components
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
-import com.example.jetpackcomposetest.navigation.SetUpNavGraph
-import com.example.jetpackcomposetest.ui.theme.JetpackComposeTestTheme
-
-class MainActivity : ComponentActivity() {
-
-    private lateinit var navController: NavHostController
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContent {
-
-            navController = rememberNavController()
-
-            SetUpNavGraph(navController = navController)
-
-        }
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Dummy() {
-    
+fun CustomEditText(onValueChange: (String) -> Unit) {
     Column(
-        modifier = Modifier.fillMaxSize(),
+        //modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -57,22 +34,25 @@ fun Dummy() {
 
         OutlinedTextField(
             value = text,
-            onValueChange = { text = it },
+            onValueChange = {
+                text = it
+                onValueChange(text)
+            },
             enabled = true,
             readOnly = false,
             label = {
-                Text(text = "Cositas")
+                Text(text = "Name")
             },
             leadingIcon = {
                 IconButton(onClick = { /*TODO*/ }) {
-                    Icon(imageVector = Icons.Filled.AccountCircle, contentDescription = "AccountCircle")
+                    Icon(imageVector = Icons.Filled.Person, contentDescription = "AccountCircle")
                 }
             },
-            trailingIcon = {
+            /*trailingIcon = {
                 IconButton(onClick = { /*TODO*/ }) {
                     Icon(imageVector = Icons.Filled.Home, contentDescription = "AccountCircle")
                 }
-            },
+            },*/
             keyboardOptions = KeyboardOptions(
                 keyboardType = KeyboardType.Email,
                 imeAction = ImeAction.Search
@@ -85,13 +65,12 @@ fun Dummy() {
         )
 
     }
-
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun DefaultPreview() {
-    JetpackComposeTestTheme {
-        Dummy()
+fun PreviewCustomEditText() {
+    CustomEditText() {
+
     }
 }

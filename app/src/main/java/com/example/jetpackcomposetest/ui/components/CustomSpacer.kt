@@ -1,4 +1,4 @@
-package com.example.jetpackcomposetest.components
+package com.example.jetpackcomposetest.ui.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

@@ -1,4 +1,4 @@
-package com.example.jetpackcomposetest.components
+package com.example.jetpackcomposetest.ui.components
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.LinearOutSlowInEasing
