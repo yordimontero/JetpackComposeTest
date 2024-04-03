@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.jetpackcomposetest.HomeScreen
-import com.example.jetpackcomposetest.WalletScreen
+import com.example.jetpackcomposetest.ui.composableviews.WalletScreen
+import com.example.jetpackcomposetest.ui.composableviews.home.HomeScreen
 
 @Composable
 fun SetUpNavGraph(

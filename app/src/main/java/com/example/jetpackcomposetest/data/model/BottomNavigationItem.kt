@@ -1,4 +1,4 @@
-package com.example.jetpackcomposetest.data
+package com.example.jetpackcomposetest.data.model
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

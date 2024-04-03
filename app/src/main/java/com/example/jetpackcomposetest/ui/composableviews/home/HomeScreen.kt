@@ -1,4 +1,4 @@
-package com.example.jetpackcomposetest
+package com.example.jetpackcomposetest.ui.composableviews.home
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -28,8 +28,8 @@ fun HomeScreen(navController: NavController) {
             modifier = Modifier.fillMaxSize().padding(padding)
         ) {
 
-            //WalletSection()
-            //CardSection()
+            WalletSection()
+            CardSection()
             CustomSpacer(width = 0.dp, height = 16.dp)
             //FinanceSection()
             //CurrenciesSection()

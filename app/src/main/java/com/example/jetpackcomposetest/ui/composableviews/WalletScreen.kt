@@ -1,4 +1,4 @@
-package com.example.jetpackcomposetest
+package com.example.jetpackcomposetest.ui.composableviews
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
