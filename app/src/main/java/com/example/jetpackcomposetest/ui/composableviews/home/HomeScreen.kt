@@ -31,7 +31,7 @@ fun HomeScreen(navController: NavController) {
             WalletSection()
             CardSection()
             CustomSpacer(width = 0.dp, height = 16.dp)
-            //FinanceSection()
+            FinanceSection()
             //CurrenciesSection()
 
         }
