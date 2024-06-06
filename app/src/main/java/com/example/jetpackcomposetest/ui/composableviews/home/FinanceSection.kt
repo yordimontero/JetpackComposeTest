@@ -28,8 +28,8 @@ fun FinanceSection() {
         )
 
         LazyRow {
-            item(FinanceData().data.size) {
-                FinanceItem()
+            items(FinanceData().data.size) { index ->
+                FinanceItem(index = index, financeData = FinanceData().data)
             }
         }
 

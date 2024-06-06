@@ -46,7 +46,7 @@ fun CardItem(index: Int, cardData: List<Card>) {
                 .clip(RoundedCornerShape(25.dp))
                 .background(card.color)
                 .width(250.dp)
-                .height(160.dp)
+                .height(180.dp)
                 .padding(
                     vertical = 12.dp,
                     horizontal = 16.dp
