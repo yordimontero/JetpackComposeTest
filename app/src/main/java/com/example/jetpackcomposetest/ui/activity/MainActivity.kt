@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
 
                 navController = rememberNavController()
 
-                SetBarColor(color = MaterialTheme.colorScheme.onBackground)
+                SetBarColor(color = MaterialTheme.colorScheme.background)
                 
                 Surface(
                     modifier = Modifier.fillMaxSize(),
