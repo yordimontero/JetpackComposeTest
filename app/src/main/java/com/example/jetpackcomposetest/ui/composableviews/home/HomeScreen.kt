@@ -32,7 +32,7 @@ fun HomeScreen(navController: NavController) {
             CardSection()
             CustomSpacer(width = 0.dp, height = 16.dp)
             FinanceSection()
-            //CurrenciesSection()
+            CurrencySection()
 
         }
 
